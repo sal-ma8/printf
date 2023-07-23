@@ -15,7 +15,7 @@ int gt_wdth(const char *frmt, int *li0, va_list li1)
 
 	for (cur_n = *li0 + 1; frmt[cur_n] != '\0'; cur_n++)
 	{
-		if (is_digit(frmt[cur_n]))
+		if (is_dig(frmt[cur_n]))
 		{
 			wd *= 10;
 			wd += frmt[cur_n] - '0';
