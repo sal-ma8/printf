@@ -20,7 +20,7 @@ int gt_prec(const char *frmt, int *li0, va_list li1)
 
 	for (cr_li += 1; frmt[cr_li] != '\0'; cr_li++)
 	{
-		if (is_digit(frmt[cr_li]))
+		if (is_dig(frmt[cr_li]))
 		{
 			prs *= 10;
 			prs += frmt[cr_li] - '0';
