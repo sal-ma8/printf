@@ -41,16 +41,26 @@ int pr_int(va_list ty, char buff[],
 	int flg, int w, int prec, int s);
 int pr_binarynum(va_list ty, char buff[],
 	int flg, int w, int prec, int s);
-
-
-
-
+int p_u_signed(va_list type, char buff[],
+		int flg, int wdth, int pre_sion, int siz);
+int p_oct_unsign(va_list type, char buff[],
+		int flg, int wdth, int pre_sion, int siz);
+int p_hexadi(va_list type, char buff[],
+		int flg, int wdth, int pre_sion, int siz);
+int p_up_hexa(va_list type, char buff[],
+		int flg, int wdth, int pre_sion, int siz);
+int p_hexa(va_list type, char m_to[], char buff[],
+		int flg, char flg_ch, int wdth, int pre_sion, int siz);
+/* Func print memo addre */
+int p_point(va_list type, char buff[],
+		int flg, int wdth, int pre_sion, int siz);
 /* Funciotns to handle other specifiers */
 int gt_flg(const char *frmt, int *n);
 int gt_wdth(const char *frmt, int *li0, va_list li1);
 int gt_prec(const char *frmt, int *li0, va_list li1);
-
-
+int g_siz(const char *f, int *r);
+int hdl_p(const char *fma, int *dex, va_list lst,
+		char buff[], int flg, int wdth, int pre_sion, int siz);
 /************** width handler ****************8*/
 int hand_wr_char(char a, char buf[],
 	int flg, int wd, int prc, int sz);
@@ -69,13 +79,13 @@ int wr_numb(int id, char buf[],
 	int length, char padd, char extra_c);*/
 
 int wr_ptr(char buf[], int id, int len,
-	int wd, int flg, char pd, char ex_ch, int pd_strt)
+		int wd, int flg, char pd, char ex_ch, int pd_strt);
 /*int write_pointer(char buffer[], int ind, int length,
 	int width, int flags, char padd, char extra_c, int padd_start);*/
 
 int wr_unsind(int is_ngv, int id,
 	char buf[],
-	int flg, int wd, int prec, int sz)
+	int flg, int wd, int prec, int sz);
 /*int write_unsgnd(int is_negative, int ind,
 char buffer[],
 	int flags, int width, int precision, int size);*/

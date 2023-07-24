@@ -24,11 +24,26 @@ int hdl_p(const char *fma, int *dex, va_list lst,
                 {'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
         };
 	for (h = 0; f_type[h].fmt != '\0'; h++)
-		if (fmt[*ind] == fmt_types[i].fmt)
-			return (fmt_types[i].fn(list, buffer, flags, width, precision, size));
-	if (fmt_types[i].fmt == '\0')
+		if (fma[*dex] == f_type[h].fma)
+			return (f_type[h].fn(lst, buff, flg, wdth, pre_sion, siz));
+	if (f_type[h].fma == '\0')
 	{
-		if (fmt[*ind] == '\0')
+		if (fma[*dex] == '\0')
 			return (-1);
-		unknow_len += write(1, "%%", 1);
-	
+	       un_know_l += write(1, "%%", 1);
+		if (fma[*dex - 1] == ' ')
+			un_know_l += write(1, " ", 1);
+		else if (wdth)
+		{
+			--(*ind);
+			while (fma[*dex] != ' ' && fma[*dex] != '%')
+				--(*dex);
+			if (fma[*dex] == ' ')
+				--(*dex);
+			return (1);
+		}
+		un_know_l += write(1, &fma[*dex], 1);
+		return (un_know_l);
+	}
+	return (print_cha);
+}	
