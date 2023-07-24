@@ -104,5 +104,7 @@ int is_dig(char); /*is_digit*/
 
 long int conv_sz_num(long int nu, int sz); /*convert_size_number*/
 long int conv_sz_unsg(unsigned long int nu, int sz); /*convert_size_unsgnd*/
-
+/****************************/
+void p_buff(char buff[], int *buf_in);
+int _printf(const char *format, ...);
 #endif /* MAIN_H */
