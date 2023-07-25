@@ -11,34 +11,34 @@
  * @siz: vp8
  * Return: numm
  */
-int hdl_p(const char *fma, int *dex, va_list lst,
+int hdl_p(const char *sct, int *dex, va_list lst,
 		char buff[], int flg, int wdth, int pre_sion, int siz)
 {
 	int h, un_know_l = 0, print_cha = -1;
 
-	fmt_t f_type[]= {
+	sct_c f_type[]= {
 		{'c', pr_char}, {'s', pr_string}, {'%', pr_percent},
                 {'i', pr_int}, {'d', pr_int}, {'b', pr_binarynum},
 		{'u', p_u_signed}, {'o', p_oct_unsign}, {'x', p_hexadi},
                 {'X', p_up_hexa}, {'p', p_point}, {'S', print_non_printable},
                 {'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
         };
-	for (h = 0; f_type[h].fmt != '\0'; h++)
-		if (fma[*dex] == f_type[h].fma)
-			return (f_type[h].fn(lst, buff, flg, wdth, pre_sion, siz));
-	if (f_type[h].fma == '\0')
+	for (h = 0; f_type[h].sct != '\0'; h++)
+		if (sct[*dex] == f_type[h].sct)
+			return (f_type[h].fs(lst, buff, flg, wdth, pre_sion, siz));
+	if (f_type[h].sct == '\0')
 	{
-		if (fma[*dex] == '\0')
+		if (sct[*dex] == '\0')
 			return (-1);
 	       un_know_l += write(1, "%%", 1);
-		if (fma[*dex - 1] == ' ')
+		if (sct[*dex - 1] == ' ')
 			un_know_l += write(1, " ", 1);
 		else if (wdth)
 		{
-			--(*ind);
-			while (fma[*dex] != ' ' && fma[*dex] != '%')
+			--(*dex);
+			while (sct[*dex] != ' ' && sct[*dex] != '%')
 				--(*dex);
-			if (fma[*dex] == ' ')
+			if (sct[*dex] == ' ')
 				--(*dex);
 			return (1);
 		}

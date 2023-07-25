@@ -20,11 +20,11 @@
 #define S_SHR 1 /*S_SHORT*/
 /******************************************/
 /**
- * struct fmt - Struct op
- * @fmt: The format.
- * @fn: The function associated.
+ * struct sct - up
+ * @sct: The format.
+ * @fs: The function associated.
  */
-struct  sct /*fmt*/
+struct sct /*fmt*/
 {
 	char sct  /*fmt;*/
 	int (*fs)(va_list, char[], int, int, int, int);
@@ -38,10 +38,6 @@ typedef struct sct sct_c;
 int _printf(const char *format, ...);
 int hdl_p(const char *fma, int *dex, va_list lst,
                 char buff[], int flg, int wdth, int pre_sion, int siz);
-
-
-
-
 
 
 
