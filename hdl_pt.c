@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * hdl_p - func1
- * @fma: vp1
+ * @sct: vp1
  * @lst: vp2
  * @dex: vp3
  * @buff: vp4
@@ -16,13 +16,13 @@ int hdl_p(const char *sct, int *dex, va_list lst,
 {
 	int h, un_know_l = 0, print_cha = -1;
 
-	sct_c f_type[]= {
+	sct_c f_type[] = {
 		{'c', pr_char}, {'s', pr_string}, {'%', pr_percent},
-                {'i', pr_int}, {'d', pr_int}, {'b', pr_binarynum},
+		{'i', pr_int}, {'d', pr_int}, {'b', pr_binarynum},
 		{'u', p_u_signed}, {'o', p_oct_unsign}, {'x', p_hexadi},
-                {'X', p_up_hexa}, {'p', p_point}, {'S', print_non_printable},
-                {'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
-        };
+		{'X', p_up_hexa}, {'p', p_point}, {'S', pt_n_pble},
+		{'r', pri_res}, {'R', p_rot_13}, {'\0', NULL}
+	};
 	for (h = 0; f_type[h].sct != '\0'; h++)
 		if (sct[*dex] == f_type[h].sct)
 			return (f_type[h].fs(lst, buff, flg, wdth, pre_sion, siz));
@@ -42,8 +42,8 @@ int hdl_p(const char *sct, int *dex, va_list lst,
 				--(*dex);
 			return (1);
 		}
-		un_know_l += write(1, &fma[*dex], 1);
+		un_know_l += write(1, &sct[*dex], 1);
 		return (un_know_l);
 	}
 	return (print_cha);
-}	
+}

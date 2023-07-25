@@ -26,7 +26,7 @@
  */
 struct sct /*fmt*/
 {
-	char sct  /*fmt;*/
+	char sct;  /*fmt;*/
 	int (*fs)(va_list, char[], int, int, int, int);
 };
 /**
@@ -66,6 +66,8 @@ int p_up_hexa(va_list type, char buff[],
 		int flg, int wdth, int pre_sion, int siz);
 int p_hexa(va_list type, char m_to[], char buff[],
 		int flg, char flg_ch, int wdth, int pre_sion, int siz);
+int pt_n_pble(va_list type, char buff[],
+                int flg, int width, int pre_sion, int siz);
 /* Func print memo addre */
 int p_point(va_list type, char buff[],
 		int flg, int wdth, int pre_sion, int siz);
@@ -74,6 +76,12 @@ int gt_flg(const char *frmt, int *n);
 int gt_wdth(const char *frmt, int *li0, va_list li1);
 int gt_prec(const char *frmt, int *li0, va_list li1);
 int g_siz(const char *f, int *r);
+
+
+int pri_res(va_list type, char buff[],
+                int flg, int wdth, int pre_sion, int siz);
+int p_rot_13(va_list type, char buff[],
+                int flg, int wdth, int pre_sion, int siz);
 /************** width handler ****************8*/
 int hand_wr_char(char a, char buf[],
 	int flg, int wd, int prc, int sz);

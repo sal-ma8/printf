@@ -31,7 +31,7 @@ int pr_char(va_list ty, char buff[],
  * Return: the Number of all strins to be print
  */
 int pr_string(va_list ty, char buff[],
-	int flg, int w, int prec, int s)
+	int flg, int w, int prec, int sz)
 {
 	int l = 0, j;
 	char *s = va_arg(ty, char *);
@@ -40,7 +40,8 @@ int pr_string(va_list ty, char buff[],
 	NOTUSED(flg);
 	NOTUSED(w);
 	NOTUSED(prec);
-	NOTUSED(s);
+	NOTUSED(sz);
+
 	if (s == NULL)
 	{
 		s = "(null)";
@@ -116,13 +117,13 @@ int pr_int(va_list ty, char buff[],
 	long int m = va_arg(ty, long int);
 	unsigned long int no;
 
-	m = conv_sz_num(n, s);
+	m = conv_sz_num(no, s);
 
 	if (m == 0)
 		buff[j--] = '0';
 
 	buff[BUF_S - 1] = '\0';
-	no = (unsigned long int)n;
+	no = (unsigned long int)m;
 
 	if (m < 0)
 	{
@@ -130,7 +131,7 @@ int pr_int(va_list ty, char buff[],
 		negat = 1;
 	}
 
-	while (no > 0)
+	while (m > 0)
 	{
 		buff[j--] = (no % 10) + '0';
 		no /= 10;
@@ -170,8 +171,8 @@ int pr_binarynum(va_list ty, char buff[],
 	b[0] = j / k;
 	for (l = 1; l < 32; l++)
 	{
-		m /= 2;
-		b[l] = (j / m) % 2;
+		k /= 2;
+		b[l] = (j / k) % 2;
 	}
 	for (l = 0, su = 0, c = 0; l < 32; l++)
 	{

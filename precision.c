@@ -27,7 +27,7 @@ int gt_prec(const char *frmt, int *li0, va_list li1)
 		}
 		else if (frmt[cr_li] == '*')
 		{
-			curr_i++;
+			cr_li++;
 			prs = va_arg(li1, int);
 			break;
 		}
