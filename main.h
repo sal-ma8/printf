@@ -18,7 +18,26 @@
 /* SIZES */
 #define S_LG 2 /*S_LONG*/
 #define S_SHR 1 /*S_SHORT*/
-
+/******************************************/
+/**
+ * struct fmt - Struct op
+ * @fmt: The format.
+ * @fn: The function associated.
+ */
+struct  sct /*fmt*/
+{
+	char sct  /*fmt;*/
+	int (*fs)(va_list, char[], int, int, int, int);
+};
+/**
+ * typedef struct sct sct_c - up
+ * @sct: vp1
+ * @sct_c: vp2
+ */
+typedef struct sct sct_c;
+int _printf(const char *format, ...);
+int hdl_p(const char *fma, int *dex, va_list lst,
+                char buff[], int flg, int wdth, int pre_sion, int siz);
 
 
 
@@ -59,8 +78,6 @@ int gt_flg(const char *frmt, int *n);
 int gt_wdth(const char *frmt, int *li0, va_list li1);
 int gt_prec(const char *frmt, int *li0, va_list li1);
 int g_siz(const char *f, int *r);
-int hdl_p(const char *fma, int *dex, va_list lst,
-		char buff[], int flg, int wdth, int pre_sion, int siz);
 /************** width handler ****************8*/
 int hand_wr_char(char a, char buf[],
 	int flg, int wd, int prc, int sz);
@@ -106,5 +123,4 @@ long int conv_sz_num(long int nu, int sz); /*convert_size_number*/
 long int conv_sz_unsg(unsigned long int nu, int sz); /*convert_size_unsgnd*/
 /****************************/
 void p_buff(char buff[], int *buf_in);
-int _printf(const char *format, ...);
 #endif /* MAIN_H */
