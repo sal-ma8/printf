@@ -117,7 +117,7 @@ int pr_int(va_list ty, char buff[],
 	long int m = va_arg(ty, long int);
 	unsigned long int no;
 
-	m = conv_sz_num(no, s);
+	m = conv_sz_num(m, s);
 
 	if (m == 0)
 		buff[j--] = '0';
@@ -131,7 +131,7 @@ int pr_int(va_list ty, char buff[],
 		negat = 1;
 	}
 
-	while (m > 0)
+	while (no > 0)
 	{
 		buff[j--] = (no % 10) + '0';
 		no /= 10;
