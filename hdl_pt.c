@@ -20,7 +20,7 @@ int hdl_p(const char *fma, int *dex, va_list lst,
 		{'c', pr_char}, {'s', pr_string}, {'%', pr_percent},
                 {'i', pr_int}, {'d', pr_int}, {'b', pr_binarynum},
 		{'u', p_u_signed}, {'o', p_oct_unsign}, {'x', p_hexadi},
-                {'X', p_up_hexa}, {'p', print_pointer}, {'S', print_non_printable},
+                {'X', p_up_hexa}, {'p', p_point}, {'S', print_non_printable},
                 {'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
         };
 	for (h = 0; f_type[h].fmt != '\0'; h++)

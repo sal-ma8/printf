@@ -12,7 +12,7 @@ int g_siz(const char *f, int *r)
 
 	if (f[crr] == 'l')
 		siz = S_LG;
-	else if (format[crr] == 'h')
+	else if (f[crr] == 'h')
 		siz = S_SHR;
 	if (siz == 0)
 		*r = crr - 1;

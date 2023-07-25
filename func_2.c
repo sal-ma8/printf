@@ -20,16 +20,16 @@ int p_point(va_list type, char buff[],
 
 	NOTUSED(wdth);
 	NOTUSED(siz);
-	if (addrs == NULL)
+	if (addr == NULL)
 		return (write(1, "(nil)", 5));
-	buffer[BUF_S - 1] = '\0';
+	buff[BUF_S - 1] = '\0';
 	NOTUSED(pre_sion);
 	nm_addr = (unsigned long)addr;
 	while (nm_addr > 0)
 	{
 		buff[dex--] = map[nm_addr % 16];
 		nm_addr /= 16;
-		lenth++
+		lenth++;
 	}
 	if ((flg & F_Z) && !(flg & F_MIN))
 		pad = '0';
