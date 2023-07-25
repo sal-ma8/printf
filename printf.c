@@ -32,9 +32,9 @@ int _printf(const char *format, ...)
 			flg = gt_flg(format, &h);
 			wdth = gt_wdth(format, &h, lst);
 			pre_sion = gt_prec(format, &h, lst);
-			siz = G_siz(format, &h);
+			siz = g_siz(format, &h);
 			++h;
-			prnt = hdl_pt(format, &h, lst, buff, flg, wdth, pre_sion, siz);
+			prnt = hdl_p(format, &h, lst, buff, flg, wdth, pre_sion, siz);
 			if (prnt == -1)
 				return (-1);
 			prnt_cha += prnt;
