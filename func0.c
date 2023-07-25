@@ -27,7 +27,7 @@ int pr_char(va_list ty, char buff[],
  * @flg:  Calculates sum of all flags
  * @w: Width specification
  * @prec: Precision specifier
- * @s: the Size specifier
+ * @sz: the Size specifier
  * Return: the Number of all strins to be print
  */
 int pr_string(va_list ty, char buff[],
@@ -41,14 +41,12 @@ int pr_string(va_list ty, char buff[],
 	NOTUSED(w);
 	NOTUSED(prec);
 	NOTUSED(sz);
-
 	if (s == NULL)
 	{
 		s = "(null)";
 		if (prec >= 6)
 			s = "      ";
 	}
-
 	while (s[l] != '\0')
 		l++;
 
@@ -72,7 +70,6 @@ int pr_string(va_list ty, char buff[],
 			return (w);
 		}
 	}
-
 	return (write(1, s, l));
 }
 /************************* PRINT PERCENT SIGN *************************/
